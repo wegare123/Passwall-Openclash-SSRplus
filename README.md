@@ -7,7 +7,7 @@ Khusus fw openwrt versi 19 kebawah ikuti perintah dibawah ini:
 1. install openclash
 2. opkg remove --autoremove --force-depends libcap
 3. reboot
-4. wget --no-check-certificate "https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/packages/libcap-bin_2.43-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends install.ipk && rm -rf install.ipk
+4. wget --no-check-certificate "https://downloads.openwrt.org/releases/21.02.0-rc3/packages/aarch64_cortex-a53/packages/libcap-bin_2.43-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends install.ipk && rm -rf install.ipk
 5. wget --no-check-certificate "https://downloads.openwrt.org/releases/21.02.0-rc3/packages/aarch64_cortex-a53/packages/libcap_2.43-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends install.ipk && rm -rf install.ipk
 6. Selesai
 7. Masuk ke luci > Services > OpenClash
