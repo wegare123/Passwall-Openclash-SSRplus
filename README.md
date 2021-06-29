@@ -7,4 +7,4 @@ Khusus fw openwrt versi 19 kebawah ikuti perintah dibawah ini:
 1. install openclash
 2. opkg remove --autoremove --force-depends libcap
 3. reboot
-4 
+4. 
