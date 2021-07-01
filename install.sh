@@ -27,6 +27,7 @@ wget --no-check-certificate "https://downloads.openwrt.org/releases/21.02.0-rc3/
 else
 echo > /dev/null
 fi
+opkg install haproxy
 mv ~/xray-plugin /usr/bin/
 chmod +x /usr/bin/xray-plugin
 chmod +x /usr/bin/v2ray
