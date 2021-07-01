@@ -21,6 +21,8 @@ wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/mai
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/main/geosite.dat" -O /usr/share/v2ray/geosite.dat
 cek=$(opkg install libcap-bin | grep 'Unknown package')
 if [[ -z $cek ]]; then
+opkg remove --force-depends libcap
+wget --no-check-certificate "https://downloads.openwrt.org/releases/21.02.0-rc3/packages/aarch64_cortex-a53/packages/libcap_2.43-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends install.ipk && rm -rf install.ipk
 wget --no-check-certificate "https://downloads.openwrt.org/releases/21.02.0-rc3/packages/aarch64_cortex-a53/packages/libcap-bin_2.43-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends install.ipk && rm -rf install.ipk
 else
 echo > /dev/null
@@ -38,6 +40,7 @@ chmod +x /usr/bin/kcptun-client
 rm -rf *.ipk 
 rm -r ~/install.sh
 echo "install selesai"
+echo "silahkan reboot"
 
 
 				
