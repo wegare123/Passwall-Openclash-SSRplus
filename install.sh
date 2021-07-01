@@ -19,13 +19,13 @@ wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/mai
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/main/geosite.dat" -O /usr/share/xray/geosite.dat
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/main/geoip.dat" -O /usr/share/v2ray/geoip.dat
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/main/geosite.dat" -O /usr/share/v2ray/geosite.dat
-cek=$(opkg install libcap-bin | grep 'Unknown package')
+cek=$(opkg install libcap-bin | grep 'Cannot install package libcap-bin.')
 if [[ -z $cek ]]; then
-echo > /dev/null
-else
 opkg remove --force-depends libcap
 wget --no-check-certificate "https://downloads.openwrt.org/releases/21.02.0-rc3/packages/aarch64_cortex-a53/packages/libcap_2.43-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends install.ipk && rm -rf install.ipk
 wget --no-check-certificate "https://downloads.openwrt.org/releases/21.02.0-rc3/packages/aarch64_cortex-a53/packages/libcap-bin_2.43-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends install.ipk && rm -rf install.ipk
+else
+echo > /dev/null
 fi
 mv ~/xray-plugin /usr/bin/
 chmod +x /usr/bin/xray-plugin
@@ -37,6 +37,8 @@ chmod +x /usr/share/v2ray/geosite.dat
 chmod +x /usr/share/xray/geoip.dat
 chmod +x /usr/share/xray/geosite.dat
 chmod +x /usr/bin/kcptun-client
+/etc/init.d/passwall disable
+/etc/init.d/openclash disable
 rm -rf *.ipk 
 rm -r ~/install.sh
 echo "install selesai"
