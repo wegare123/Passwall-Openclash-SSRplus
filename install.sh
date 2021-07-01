@@ -18,6 +18,7 @@ chmod +x /usr/bin/v2ray
 chmod +x /usr/bin/v2ctl
 chmod +x /usr/bin/geoip.dat
 chmod +x /usr/bin/geosite.dat
+rm -r ~/install.sh
 echo "install selesai"
 
 
