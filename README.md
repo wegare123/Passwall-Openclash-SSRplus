@@ -1,5 +1,7 @@
-# Passwall & Openclash
-wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/Passwall-Openclash/main/install.sh" -O ~/install.sh && chmod 777 ~/install.sh && ~/./install.sh
+# Passwall
+wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/Passwall-Openclash/main/install-passwall.sh" -O ~/install.sh && chmod 777 ~/install.sh && ~/./install.sh
+# Openclash
+wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/Passwall-Openclash/main/install-openclash.sh" -O ~/install.sh && chmod 777 ~/install.sh && ~/./install.sh
 # Catatan Openclash
 Khusus fw openwrt versi 19 kebawah ikuti perintah dibawah ini:
 1. install openclash dengan command diatas
