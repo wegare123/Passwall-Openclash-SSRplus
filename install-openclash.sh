@@ -1,5 +1,5 @@
 #!/bin/bash
-#passwall&openclash (Wegare)
+#openclash (Wegare)
 cd ~/ && opkg update && opkg install unzip
 cek2=$(opkg list-installed | grep dnsmasq-full | awk '{print $1}')
 if [ $cek2 = "dnsmasq-full" ]; then
