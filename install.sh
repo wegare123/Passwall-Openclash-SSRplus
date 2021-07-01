@@ -1,5 +1,5 @@
 #!/bin/bash
-#passwall&openclash (Wegare)
+#passwall (Wegare)
 cd ~/ && opkg update && opkg install unzip
 cek2=$(opkg list-installed | grep dnsmasq-full | awk '{print $1}')
 if [ $cek2 = "dnsmasq-full" ]; then
@@ -9,6 +9,8 @@ opkg remove dnsmasq && opkg install dnsmasq-full
 fi
 mkdir -p /usr/share/xray/
 mkdir -p /usr/share/v2ray/
+wget --no-check-certificate "https://github.com/wegare123/Passwall-Openclash/blob/main/kcptun-client?raw=true" -O /usr/bin/kcptun-client
+wget --no-check-certificate "https://github.com/wegare123/Passwall-Openclash/blob/main/brook.ipk?raw=true" -O /root/brook.ipk
 wget --no-check-certificate "https://github.com/wegare123/Passwall-Openclash/blob/main/passwall-openclash.zip?raw=true" -O ~/ekstrak.zip && unzip ~/ekstrak.zip && opkg install --force-depends *.ipk && rm -rf ekstrak.zip
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/main/v2ray" -O /usr/bin/v2ray
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/main/v2ctl" -O /usr/bin/v2ctl
@@ -17,8 +19,12 @@ wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/mai
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/main/geosite.dat" -O /usr/share/xray/geosite.dat
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/main/geoip.dat" -O /usr/share/v2ray/geoip.dat
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/main/geosite.dat" -O /usr/share/v2ray/geosite.dat
-wget --no-check-certificate "https://github.com/wegare123/Passwall-Openclash/blob/main/kcptun-client?raw=true" -O /usr/bin/kcptun-client
-wget --no-check-certificate "https://github.com/wegare123/Passwall-Openclash/blob/main/brook.ipk?raw=true" -O /root/brook.ipk
+cek=$(opkg install libcap-bin | grep 'Unknown package')
+if [[ -z $cek ]]; then
+wget --no-check-certificate "https://downloads.openwrt.org/releases/21.02.0-rc3/packages/aarch64_cortex-a53/packages/libcap-bin_2.43-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends install.ipk && rm -rf install.ipk
+else
+echo > /dev/null
+fi
 mv ~/xray-plugin /usr/bin/
 chmod +x /usr/bin/xray-plugin
 chmod +x /usr/bin/v2ray
