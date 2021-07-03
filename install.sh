@@ -36,7 +36,7 @@ wget --no-check-certificate "https://github.com/wegare123/ssrt/blob/main/shadows
 else
 echo "frimware versi yang anda gunakan tidak terdeteksi silahkan install sendiri shadowsocksr-libev nya"
 fi
-opkg install --force-depends *.ipk && opkg install haproxy 
+opkg install --force-depends *.ipk && opkg install haproxy libevent2
 mv ~/xray-plugin /usr/bin/
 chmod +x /usr/bin/xray-plugin
 chmod +x /usr/bin/v2ray
