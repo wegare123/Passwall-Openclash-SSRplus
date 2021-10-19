@@ -56,6 +56,9 @@ rm -r ~/install.sh
 wget --no-check-certificate "https://github.com/wegare123/Passwall-Openclash-SSRplus/blob/main/clash?raw=true" -O /etc/openclash/core/clash
 wget --no-check-certificate "https://github.com/wegare123/Passwall-Openclash-SSRplus/blob/main/clash_tun?raw=true" -O /etc/openclash/core/clash_tun
 wget --no-check-certificate "https://github.com/wegare123/Passwall-Openclash-SSRplus/blob/main/clash_game?raw=true" -O /etc/openclash/core/clash_game
+chmod +x /etc/openclash/core/clash
+chmod +x /etc/openclash/core/clash_tun
+chmod +x /etc/openclash/core/clash_game
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/Passwall-Openclash-SSRplus/main/myip.htm" -O /usr/lib/lua/luci/view/openclash/myip.htm
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/Passwall-Openclash-SSRplus/main/developer.htm" -O /usr/lib/lua/luci/view/openclash/developer.htm
 echo "install selesai"
