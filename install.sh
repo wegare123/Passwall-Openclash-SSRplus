@@ -63,6 +63,5 @@ wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/Passwal
 wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/Passwall-Openclash-SSRplus/main/developer.htm" -O /usr/lib/lua/luci/view/openclash/developer.htm
 echo "install selesai"
 echo "silahkan reboot"
-Noh buat yg pke openclash di FW pak wegare, pindahin ke usr/lib/lua/luci/view/openclash
 
 				
