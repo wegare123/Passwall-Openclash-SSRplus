@@ -22,8 +22,8 @@ wget --no-check-certificate "https://raw.githubusercontent.com/wegare123/vmt/mai
 cek=$(opkg install libcap-bin | grep 'Cannot install package libcap-bin.')
 if [[ -z $cek ]]; then
 opkg remove --force-depends libcap
-wget --no-check-certificate "https://downloads.openwrt.org/releases/21.02.0-rc3/packages/aarch64_cortex-a53/packages/libcap_2.43-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends --force-overwrite install.ipk && rm -rf install.ipk
-wget --no-check-certificate "https://downloads.openwrt.org/releases/21.02.0-rc3/packages/aarch64_cortex-a53/packages/libcap-bin_2.43-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends --force-overwrite install.ipk && rm -rf install.ipk
+wget --no-check-certificate "https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/libcap_2.51-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends --force-overwrite install.ipk && rm -rf install.ipk
+wget --no-check-certificate "https://downloads.openwrt.org/snapshots/packages/aarch64_cortex-a53/base/libcap-bin_2.51-1_aarch64_cortex-a53.ipk" -O /root/install.ipk && cd /root && opkg install --force-depends --force-overwrite install.ipk && rm -rf install.ipk
 else
 echo > /dev/null
 fi
