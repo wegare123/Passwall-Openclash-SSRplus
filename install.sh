@@ -55,9 +55,9 @@ chmod +x /usr/bin/kcptun-client
 /etc/init.d/shadowsocksr disable
 rm -rf *.ipk 
 rm -r ~/install.sh
-wget --no-check-certificate "https://github.com/wegare123/Passwall-Openclash-SSRplus/blob/main/clash?raw=true" -O /etc/openclash/core/clash
-wget --no-check-certificate "https://github.com/wegare123/Passwall-Openclash-SSRplus/blob/main/clash_tun?raw=true" -O /etc/openclash/core/clash_tun
-wget --no-check-certificate "https://github.com/wegare123/Passwall-Openclash-SSRplus/blob/main/clash_game?raw=true" -O /etc/openclash/core/clash_game
+wget --no-check-certificate "https://www.dropbox.com/s/s67eahgdyr7hdeu/clash" -O /etc/openclash/core/clash
+cp /etc/openclash/core/clash /etc/openclash/core/clash_tun
+cp /etc/openclash/core/clash /etc/openclash/core/clash_game
 chmod +x /etc/openclash/core/clash
 chmod +x /etc/openclash/core/clash_tun
 chmod +x /etc/openclash/core/clash_game
